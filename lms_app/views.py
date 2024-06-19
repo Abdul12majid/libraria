@@ -29,6 +29,7 @@ def inventory(request):
 	}
 	return render(request, 'inventory.html', context)
 
+@login_required(login_url='login-user')
 def cart(request):
 	user = request.user
 	books = user.profile.books_taken.all().order_by('-id')
@@ -82,6 +83,7 @@ def return_book(request, pk):
 	
 	return redirect('cart')
 
+@login_required(login_url='login-user')
 def check_out(request):
 	user = request.user
 	books = user.profile.books_taken.all().order_by('-id')

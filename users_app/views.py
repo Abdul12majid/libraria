@@ -39,7 +39,7 @@ def login_user(request):
 			else:
 				print('incorrect password')
 				messages.success(request, ('incorrect details'))
-				return redirect('login_user')
+				return redirect('login-user')
 		else:
 			messages.success(request, ('Account does not exists, kindly create one.'))
 			print('account does not exist')
