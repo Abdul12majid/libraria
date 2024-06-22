@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Book, Cart
+from .models import Book, Cart, Message
 # Create your views here.
 
 
@@ -102,11 +102,26 @@ def search(request):
 	if request.method == "POST":
 		name = request.POST['keywords']
 		books = Book.objects.filter(name__contains=name)
-
 		context = {
 			"name":name,
 			"books":books,
-
 		}
 		return render(request, 'search.html', context)
 	return render(request, 'search.html')
+
+
+@login_required(login_url='login-user')
+def contact(request):
+	user = request.user
+	messages = user.profile.message
+	print(messages)
+	if request.method == "POST":
+		body = request.POST['message']
+		message = Message.objects.create(sender=user, body=body)
+		#message.save()
+	context = {
+		
+			'user':user,
+			'messages':messages,
+		}
+	return render(request, 'contact.html', context)

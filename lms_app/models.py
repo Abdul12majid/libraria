@@ -22,6 +22,14 @@ class Status(models.Model):
 		return str(self.name)
 
 
+class Message(models.Model):
+	sender = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
+	body = models.TextField(blank=True)
+
+	def __str__(self):
+		return str(self.sender)
+	
+
 
 class Book(models.Model):
 	name = models.CharField(max_length=50, blank=False)
@@ -55,6 +63,7 @@ class Profile(models.Model):
 	contact = models.CharField(blank=True, max_length=500)
 	books_taken = models.ManyToManyField(Book, related_name='book', blank=True)
 	book_count = models.IntegerField(default=0)
+	message = models.TextField(blank=True)
 	books_price = models.IntegerField(default=0)
 	checked_out = models.BooleanField(default=False)
 

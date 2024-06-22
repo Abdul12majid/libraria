@@ -10,4 +10,5 @@ urlpatterns = [
     path('return_book/<str:pk>', views.return_book, name='return_book'),
     path('checkout', views.check_out, name='checkout'),
     path('search', views.search, name='search'),
+    path('contact', views.contact, name='contact'),
 ]

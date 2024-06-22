@@ -132,7 +132,7 @@
                                                 <li><a href="blog-detail.html">Blog Detail</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                         </ul>
                                     </li>
                                     
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -541,30 +541,28 @@
         
 
         <!-- Start: Footer -->
-        <footer class="site-footer">
-            <div class="sub-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer-text col-md-3">
-                            <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-                        </div>
-                        <div class="col-md-9 pull-right">
-                            <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="books-media-list-view.html">Books &amp; Media</a></li>
-                                <li><a href="news-events-list-view.html">News &amp; Events</a></li>
-                                <li><a href="#">Kids &amp; Teens</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- End: Footer -->
+<footer class="site-footer">
+
+</div>
+<div class="sub-footer">
+<div class="container">
+<div class="row">
+<div class="footer-text col-md-3">
+<p><a target="_blank" href=""></a></p>
+</div>
+<div class="col-md-9 pull-right">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="{% url 'inventory' %}">Books</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- End: Footer -->
 
 
 <script type="text/javascript" src="{%static 'js/jquery-1.12.4.min.js' %}"></script>
