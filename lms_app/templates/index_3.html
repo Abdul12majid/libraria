@@ -69,6 +69,10 @@
 </li>
 <li class="dropdown">
 <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Blog</a>
+{% if request.user.is_superuser %}
+<li class="dropdown">
+<a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'dashboard' %}">Admin Page</a>
+{% endif %}
 <ul class="dropdown-menu">
     <li><a href="blog.html">Blog Grid View</a></li>
     <li><a href="blog-detail.html">Blog Detail</a></li>
@@ -215,7 +219,7 @@
 <div class="welcome-text">
 <h2 class="section-title">Welcome to the libraria</h2>
 <span class="underline left"></span>
-<p>TWe're thrilled to welcome you to the online portal of [Library Name]! This website is your one-stop shop to explore the vast collection of resources and services we offer. Whether you're a student, researcher, or lifelong learner, we have something for everyone.</p>
+<p>We're thrilled to welcome you to the online portal of [Library Name]! This website is your one-stop shop to explore the vast collection of resources and services we offer. Whether you're a student, researcher, or lifelong learner, we have something for everyone.</p>
 
 <h4>Stay tuned to discover:</h4></br>
 <ol>

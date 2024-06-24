@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Book, Cart, Message
+from .models import Book, Cart, Message, Inventory, Blog
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -52,12 +53,16 @@ def collect_book(request, pk):
 			user.profile.books_taken.add(book_id)
 			user.profile.save()
 			price = book_id.book_price
+			store = Inventory.objects.get(id=1)
 			total_price = user.profile.books_price + price
 			user.profile.books_price = total_price
 			user.profile.save()
 			x = book_id.book_count - 1
 			book_id.book_count = x
 			book_id.save()
+			new_amount = store.book_count - 1
+			store.book_count = new_amount
+			store.save()
 	else:
 		print('Not enough book')
 	
@@ -70,7 +75,7 @@ def collect_book(request, pk):
 def return_book(request, pk):
 	user = request.user
 	book_id = Book.objects.get(name=pk)
-	
+	store = Inventory.objects.get(id=1)
 	user.profile.books_taken.remove(book_id)
 	user.profile.save()
 	price = book_id.book_price
@@ -80,6 +85,9 @@ def return_book(request, pk):
 	x = book_id.book_count + 1
 	book_id.book_count = x
 	book_id.save()
+	new_amount = store.book_count + 1
+	store.book_count = new_amount
+	store.save()
 	
 	return redirect('cart')
 
@@ -125,3 +133,25 @@ def contact(request):
 			'messages':messages,
 		}
 	return render(request, 'contact.html', context)
+
+
+@login_required(login_url='login-user')
+def dashboard(request):
+	if request.user.is_superuser:
+		inventory = Inventory.objects.all()
+		users = User.objects.count()
+		users_in = User.objects.all()
+		books = Book.objects.all().order_by('-id')[:10]
+		blogs = Blog.objects.all().order_by('-id')[:5]
+		
+		context = {
+			"inventory":inventory,
+			"users":users,
+			"users_in":users_in,
+			"books":books,
+			"blogs":blogs,
+
+		}
+		return render(request, 'dashboard.html', context)
+	else:
+		return redirect('inventory')

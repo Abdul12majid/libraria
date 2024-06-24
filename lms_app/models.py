@@ -28,7 +28,20 @@ class Message(models.Model):
 
 	def __str__(self):
 		return str(self.sender)
+
+class Blog(models.Model):
+	author = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
+	body = models.TextField(blank=True)
+
+	def __str__(self):
+		return str(self.author)
 	
+class Inventory(models.Model):
+	book_count = models.IntegerField(default=0)
+	book_held = models.IntegerField(default=0)
+
+	class Meta:
+		verbose_name_plural = 'Inventory'
 
 
 class Book(models.Model):
