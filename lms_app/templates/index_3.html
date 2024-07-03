@@ -61,14 +61,8 @@
 <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'inventory' %}">Books &amp; Media</a>
 </li>
 <li class="dropdown">
-<a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Pages</a>
-<ul class="dropdown-menu">
-    <li><a href="{% url 'cart' %}">Cart</a></li>
-    <li><a href="{% url 'checkout' %}">Checkout</a></li>
-</ul>
+<a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'cart' %}">Cart</a>
 </li>
-<li class="dropdown">
-<a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Blog</a>
 {% if request.user.is_superuser %}
 <li class="dropdown">
 <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'dashboard' %}">Admin Page</a>
@@ -693,195 +687,7 @@
 
 
 <!-- Start: Meet Staff -->
-<section class="meet-staff-box section-padding">
-<div class="container-fluid">
-<div class="row">
-<div class="center-content">
-<h2 class="section-title">Meet Our Staff</h2>
-<span class="underline center"></span>
-<p class="lead">.</p>
-</div>
-<div class="staff-list">
-<div class="staff-member">
-<figure>
-<img src="{% static 'images/team-img-04.jpg' %}" alt="team" />
-</figure>
-<div class="content-block">
-<div class="staff-info">
-<h4>David J. Seleb</h4>
-<span class="designation">Executive Director</span>
-<ul class="social">
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-linkedin"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-twitter"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-skype"></i>
-    </a>
-</li>
-</ul>
-<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using content...</p>
-<a class="btn btn-primary" href="#">Read More</a>
-</div>
-</div>
-</div>
-<div class="staff-member">
-<figure>
-<img src="{% static 'images/team-img-05.jpg' %}" alt="team" />
-</figure>
-<div class="content-block">
-<div class="staff-info">
-<h4>Robert Simmons</h4>
-<span class="designation">Deputy Director</span>
-<ul class="social">
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-linkedin"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-twitter"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-skype"></i>
-    </a>
-</li>
-</ul>
-<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using content...</p>
-<a class="btn btn-primary" href="#">Read More</a>
-</div>
-</div>
-</div>
-<div class="staff-member">
-<figure>
-<img src="{% static 'images/team-img-06.jpg' %}" alt="team" />
-</figure>
-<div class="content-block">
-<div class="staff-info">
-<h4>Anna Delpan</h4>
-<span class="designation">Librarian</span>
-<ul class="social">
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-linkedin"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-twitter"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-skype"></i>
-    </a>
-</li>
-</ul>
-<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using content...</p>
-<a class="btn btn-primary" href="#">Read More</a>
-</div>
-</div>
-</div>
-<div class="staff-member">
-<figure>
-<img src="{% static 'images/team-img-06.jpg' %}" alt="team" />
-</figure>
-<div class="content-block">
-<div class="staff-info">
-<h4>Anna Delpan</h4>
-<span class="designation">Librarian</span>
-<ul class="social">
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-linkedin"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-twitter"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-skype"></i>
-    </a>
-</li>
-</ul>
-<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using content...</p>
-<a class="btn btn-primary" href="#">Read More</a>
-</div>
-</div>
-</div>
-<div class="staff-member">
-<figure>
-<img src="{% static 'images/team-img-07.jpg' %}" alt="team" />
-</figure>
-<div class="content-block">
-<div class="staff-info">
-<h4>Anna Delpan</h4>
-<span class="designation">Librarian</span>
-<ul class="social">
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-linkedin"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-facebook-f"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-twitter"></i>
-    </a>
-</li>
-<li>
-    <a href="#" target="_blank">
-        <i class="fa fa-skype"></i>
-    </a>
-</li>
-</ul>
-<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using content...</p>
-<a class="btn btn-primary" href="#">Read More</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- End: Meet Staff -->
+
 
 <!-- Start: Latest Blog -->
 <section class="latest-blog">
@@ -889,7 +695,7 @@
 <div class="center-content">
 <h2 class="section-title">Latest from Blog</h2>
 <span class="underline center"></span>
-<p class="lead">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+<p class="lead">Check out this newly approved bog.</p>
 </div>
 <div class="tabs-container">
 <div class="tabs-menu">
@@ -917,7 +723,10 @@
     <i class="fa fa-user"></i> Adrey Pachai
 </a>
 </div>
-<p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam condimentum semper mauris vitae porttitor.</p>
+<p>Welcome, fellow bookworms and literature enthusiasts! This is Bibliophile's Corner, a haven for all things books. Whether you're a seasoned reader or just picking up your first novel, this blog is for you.
+Here, we'll delve into the wonderful world of books, exploring different genres, discussing captivating characters, and recommending must-reads. We'll also share tips on creating the perfect reading nook, overcoming that dreaded slump, and building a diverse bookshelf.</p>
+
+<p>So, grab a cup of tea, curl up with a cozy blanket, and join me on this literary adventure. Let's celebrate the power of books to transport us, educate us, and entertain us. </br>Happy reading!</p>
 <a class="btn btn-dark-gray">Read More</a>
 </div>
 </article>

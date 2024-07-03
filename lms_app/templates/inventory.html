@@ -121,13 +121,6 @@
                                             <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'cart' %}">Cart</a>
                                             
                                         </li>
-                                        <li class="dropdown">
-                                            <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Blog</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="blog.html">Blog Grid View</a></li>
-                                                <li><a href="blog-detail.html">Blog Detail</a></li>
-                                            </ul>
-                                        </li>
                                         <li><a href="{% url 'contact' %}">Contact</a></li>
                                     </ul>
                                 </div>
@@ -154,13 +147,6 @@
                                             <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{% url 'cart' %}">Cart</a>
                                             
                                         </li>
-                                    <li>
-                                        <a href="blog.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog Grid View</a></li>
-                                            <li><a href="blog-detail.html">Blog Detail</a></li>
-                                        </ul>
-                                    </li>
                                     
                                     <li><a href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
@@ -306,7 +292,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <p><strong>Summary:</strong> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
+                                <p><strong>Summary:</strong> {{latest.summary}}. </p>
 
                                 <div class="table-tabs" id="responsiveTabs">
                                     <ul class="nav nav-tabs">
@@ -347,26 +333,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div id="sectionB" class="tab-pane fade in">
-                                            <h5>Lorem Ipsum Dolor</h5>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                        </div>
-                                        <div id="sectionC" class="tab-pane fade in">
-                                            <h5>Lorem Ipsum Dolor</h5>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                        </div>
-                                        <div id="sectionD" class="tab-pane fade in">
-                                            <h5>Lorem Ipsum Dolor</h5>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                        </div>                                                    
-                                        <div id="sectionE" class="tab-pane fade in">
-                                            <h5>Lorem Ipsum Dolor</h5>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                        </div>                                                    
-                                        <div id="sectionF" class="tab-pane fade in">
-                                            <h5>Lorem Ipsum Dolor</h5>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +359,7 @@
                                             <p><strong>Author:</strong>  F. Scott Fitzgerald</p>
                                             <p><strong>ISBN:</strong>  9781581573268</p>
                                         </header>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
+                                        <p>About the book.</p>
                                         <div class="actions">
                                             <ul>
                                                 <li>
@@ -439,7 +406,7 @@
                                             <p><strong>Author:</strong>  F. Scott Fitzgerald</p>
                                             <p><strong>ISBN:</strong>  9781581573268</p>
                                         </header>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
+                                        <p>About the book.</p>
                                         <div class="actions">
                                             <ul>
                                                 <li>
@@ -486,7 +453,7 @@
                                             <p><strong>Author:</strong>  F. Scott Fitzgerald</p>
                                             <p><strong>ISBN:</strong>  9781581573268</p>
                                         </header>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Pellentesque dolor turpis, pulvinar varius.</p>
+                                        <p>About the book.</p>
                                         <div class="actions">
                                             <ul>
                                                 <li>

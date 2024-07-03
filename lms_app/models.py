@@ -57,6 +57,7 @@ class Book(models.Model):
 	category = models.ForeignKey(Catalogue, blank=True, on_delete=models.CASCADE)
 	book_count = models.IntegerField(default=1)
 	book_price = models.IntegerField(default=10)
+	summary = models.TextField(blank=True, null=True)
 	status = models.ForeignKey(Status, blank=True, on_delete=models.CASCADE)
 
 	def __str__(self):
