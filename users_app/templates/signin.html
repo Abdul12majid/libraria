@@ -51,7 +51,7 @@
                             <div class="navbar-header">
                                 <div class="navbar-brand">
                                     <h1>
-                                        <a href="index-2.html">
+                                        <a href="/">
                                             <img src="{% static 'images/libraria-logo-v1.png' %}" alt="LIBRARIA" />
                                         </a>
                                     </h1>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="topbar-links">
-                                            <a href="signin.html"><i class="fa fa-lock"></i>Login / Register</a>
+                                            <a href="{% url 'login-user' %}"><i class="fa fa-lock"></i>Login / Register</a>
                                             <span>|</span>
                                             <div class="header-cart dropdown">
                                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -137,7 +137,7 @@
                                         </ul>
                                     </li>
                                     
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                                     </ul>
                                 </li>
                                 
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
             <div class="banner-header">
                 <h2>Signin</h2>
                 <span class="underline center"></span>
-                <p class="lead">Proin ac eros pellentesque dolor pharetra tempo.</p>
+                <p class="lead">Sign in to your accout below.</p>
             </div>
             <div class="breadcrumb">
                 <ul>
@@ -212,6 +212,53 @@
                             <div class="woocommerce-login">
                                 <div class="company-info signin-register">
 
+                                
+                                    <div class="col-md-5 col-md-offset-1 border-dark-left">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="company-detail bg-dark margin-left">
+                                                    <div class="signin-head">
+                                                        <h2>Sign in</h2>
+                                                        <span class="underline left"></span>
+                                                    </div>
+                                                    <form action="{% url 'login-user' %}" class="login" method="post" validate> 
+                                                        {% csrf_token %}
+                                                        <p class="form-row form-row-first input-required">
+                                                            <label>
+                                                                <span class="first-letter">Email</span>
+                                                                <span class="second-letter">*</span>
+                                                            </label>
+                                                            <input type="email" id="username" name="email"
+                                                                class="input-text" required>
+                                                        </p>
+                                                        <p class="form-row form-row-last input-required">
+                                                            <label>
+                                                                <span class="first-letter">Pin</span>
+                                                                <span class="second-letter">*</span>
+                                                            </label>
+                                                            <input type="password" id="password" name="password"
+                                                                class="input-text" required>
+                                                        </p>
+                                                        <div class="clear"></div>
+                                                        <div class="password-form-row">
+                                                            <p class="form-row input-checkbox">
+                                                                <input type="checkbox" value="forever" id="rememberme"
+                                                                    name="rememberme">
+                                                                <label class="inline" for="rememberme">Remember
+                                                                    me</label>
+                                                            </p>
+                                                            <p class="lost_password">
+                                                                <a href="#">Lost your Pin?</a>
+                                                            </p>
+                                                        </div>
+                                                        <input type="submit" value="Login" name="login"
+                                                            class="button btn btn-default">
+                                                        <div class="clear"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-5 border-dark new-user">
                                         <div class="row">
                                             <div class="col-md-12">
@@ -219,8 +266,7 @@
                                                     <div class="new-user-head">
                                                         <h2>Create New Account</h2>
                                                         <span class="underline left"></span>
-                                                        <p>If no barcode has been assigned for your account, please
-                                                            contact the library.</p>
+                                                        <p>Kindly use correct details while signing up.</p>
                                                     </div>
                                                     <form action="{% url 'register' %}" class="login" method="post">
                                                         {% csrf_token %}
@@ -282,52 +328,6 @@
                                     <div class=>
                                         
                                     </div>
-                                    <div class="col-md-5 col-md-offset-1 border-dark-left">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="company-detail bg-dark margin-left">
-                                                    <div class="signin-head">
-                                                        <h2>Sign in</h2>
-                                                        <span class="underline left"></span>
-                                                    </div>
-                                                    <form action="{% url 'login-user' %}" class="login" method="post" validate> 
-                                                        {% csrf_token %}
-                                                        <p class="form-row form-row-first input-required">
-                                                            <label>
-                                                                <span class="first-letter">Email</span>
-                                                                <span class="second-letter">*</span>
-                                                            </label>
-                                                            <input type="email" id="username" name="email"
-                                                                class="input-text" required>
-                                                        </p>
-                                                        <p class="form-row form-row-last input-required">
-                                                            <label>
-                                                                <span class="first-letter">Pin</span>
-                                                                <span class="second-letter">*</span>
-                                                            </label>
-                                                            <input type="password" id="password" name="password"
-                                                                class="input-text" required>
-                                                        </p>
-                                                        <div class="clear"></div>
-                                                        <div class="password-form-row">
-                                                            <p class="form-row input-checkbox">
-                                                                <input type="checkbox" value="forever" id="rememberme"
-                                                                    name="rememberme">
-                                                                <label class="inline" for="rememberme">Remember
-                                                                    me</label>
-                                                            </p>
-                                                            <p class="lost_password">
-                                                                <a href="#">Lost your Pin?</a>
-                                                            </p>
-                                                        </div>
-                                                        <input type="submit" value="Login" name="login"
-                                                            class="button btn btn-default">
-                                                        <div class="clear"></div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -350,17 +350,13 @@
                         <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
                     </div>
                     <div class="col-md-9 pull-right">
-                        <ul>
-                            <li><a href="index-2.html">Home</a></li>
-                            <li><a href="books-media-list-view.html">Books &amp; Media</a></li>
-                            <li><a href="news-events-list-view.html">News &amp; Events</a></li>
-                            <li><a href="#">Kids &amp; Teens</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="#">Research</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
+                    <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'inventory' %}">Books</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
                 </div>
             </div>
         </div>

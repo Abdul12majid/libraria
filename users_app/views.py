@@ -35,7 +35,7 @@ def login_user(request):
 				print('Logged in')
 				x = str(request.user.id)
 
-				return redirect('index')
+				return redirect('inventory')
 			else:
 				print('incorrect password')
 				messages.success(request, ('incorrect details'))
