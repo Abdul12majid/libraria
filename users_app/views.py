@@ -77,7 +77,7 @@ def register(request):
 			messages.success(request, ('Password does not match, try again'))
 			c = password1==password2
 			return render(request, 'register.html', {'first_name':first_name, 'username':username, 'last_name':last_name, 'email':email, 'c':c})
-	return render(request, 'register_user.html', {})
+	return render(request, 'signin.html', {})
 
 def logout_user(request):
 	user = request.user
