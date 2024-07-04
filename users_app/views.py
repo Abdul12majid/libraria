@@ -84,4 +84,4 @@ def logout_user(request):
 	user.profile.checked_out = True
 	user.profile.save()
 	logout(request)
-	return redirect('index')
+	return redirect('register')
