@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Book, Catalogue, Blog, Status, Cart, Message, Inventory
+from .models import Profile, Book, Catalogue, Blog, Status, Cart, Message, Inventory, Request
 from django.contrib.auth.models import Group, User
 
 # Register your models here.
@@ -8,6 +8,7 @@ admin.site.register(Catalogue)
 admin.site.register(Status)
 admin.site.register(Message)
 admin.site.register(Blog)
+admin.site.register(Request)
 admin.site.register(Inventory)
 
 @admin.register(Book)

@@ -12,4 +12,6 @@ urlpatterns = [
     path('search', views.search, name='search'),
     path('contact', views.contact, name='contact'),
     path('dashboard', views.dashboard, name='dashboard'),
+    path('make_request/<str:pk>', views.make_request, name='make_request'),
+    path('deny/<int:pk>', views.deny, name='deny'),
 ]

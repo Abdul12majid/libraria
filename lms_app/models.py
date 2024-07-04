@@ -63,6 +63,14 @@ class Book(models.Model):
 	def __str__(self):
 		return str(self.name)
 
+class Request(models.Model):
+	name = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
+	book = models.ForeignKey(Book, blank=True, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return str(self.name.username)
+
+
 class Cart(models.Model):
 	owner=models.OneToOneField(User, null=True, on_delete=models.SET_NULL)
 	books = models.ManyToManyField(Book, related_name='cart', blank=True)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Book, Cart, Message, Inventory, Blog, Catalogue
+from .models import Book, Cart, Message, Inventory, Blog, Catalogue, Request
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -63,6 +63,9 @@ def collect_book(request, pk):
 			new_amount = store.book_count - 1
 			store.book_count = new_amount
 			store.save()
+			get_book = Request.objects.get(book=book_id)
+			get_book.delete()
+			return redirect(request.META.get("HTTP_REFERER"))
 	else:
 		print('Not enough book')
 	
@@ -144,6 +147,7 @@ def dashboard(request):
 		users_in = User.objects.all()
 		books = Book.objects.all().order_by('-id')[:10]
 		blogs = Blog.objects.all().order_by('-id')[:5]
+		requests = Request.objects.all().order_by('-id')
 		catalogue = Catalogue.objects.all()
 		books_taken = user.profile.books_taken.all()
 		
@@ -155,8 +159,23 @@ def dashboard(request):
 			"blogs":blogs,
 			"catalogue":catalogue,
 			"books_taken":books_taken,
+			"requests":requests,
 
 		}
 		return render(request, 'dashboard.html', context)
 	else:
 		return redirect('inventory')
+
+def make_request(request, pk):
+	book_id = Book.objects.get(name=pk)
+	user = request.user
+	x = Request.objects.create(name=user, book=book_id)
+	x.save()
+	return redirect(request.META.get("HTTP_REFERER"))
+
+
+def deny(request, pk):
+	book_id = Book.objects.get(id=pk)
+	user = request.user
+	book_id.delete()
+	return redirect(request.META.get("HTTP_REFERER"))
