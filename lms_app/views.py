@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Book, Cart, Message, Inventory, Blog
+from .models import Book, Cart, Message, Inventory, Blog, Catalogue
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -137,12 +137,15 @@ def contact(request):
 
 @login_required(login_url='login-user')
 def dashboard(request):
+	user = request.user
 	if request.user.is_superuser:
 		inventory = Inventory.objects.all()
 		users = User.objects.count()
 		users_in = User.objects.all()
 		books = Book.objects.all().order_by('-id')[:10]
 		blogs = Blog.objects.all().order_by('-id')[:5]
+		catalogue = Catalogue.objects.all()
+		books_taken = user.profile.books_taken.all()
 		
 		context = {
 			"inventory":inventory,
@@ -150,6 +153,8 @@ def dashboard(request):
 			"users_in":users_in,
 			"books":books,
 			"blogs":blogs,
+			"catalogue":catalogue,
+			"books_taken":books_taken,
 
 		}
 		return render(request, 'dashboard.html', context)
