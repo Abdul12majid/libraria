@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from keys.key import KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tovf385tj=er5=&5i1poio@292ldds1zn&-&vbt@^sv&fsmk3m'
+SECRET_KEY = KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -87,6 +88,23 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#DATABASES = {
+ # 'default': {
+  #  'ENGINE': 'django.db.backends.postgresql',
+   # 'NAME': 'sallah_db',
+    #'USER': 'sallah_db_owner',
+    #'PASSWORD': '8e4ljTkzYOpN',
+    #'HOST': 'ep-raspy-firefly-a46alvr7.us-east-1.aws.neon.tech',
+    #'PORT': 5432,
+    #'OPTIONS': {
+    #  'sslmode': 'require',
+    #},
+  #}
+#}
+#DATABASES = {
+ #   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+
+ #}
 
 
 # Password validation
